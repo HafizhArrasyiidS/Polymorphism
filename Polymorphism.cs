@@ -9,7 +9,7 @@ namespace MyApplication
   {
     Console.WriteLine("The animal makes a sound");
   }
- public virtual void animalSound2() 
+ public void animalSound2() 
   {
     Console.WriteLine("Suoro Asu");
   }
@@ -25,7 +25,7 @@ class Pig : Animal  // Derived class (child)
 
 class Dog : Animal  // Derived class (child) 
 {
-  public override  void animalSound2() 
+  public  void animalSound2() 
   {
     Console.WriteLine("The dog says: bow wow");
   }
