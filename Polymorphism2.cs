@@ -1,83 +1,61 @@
 using System;
-
-public class simpledataklg
+public class HelloWorld
 {
-    static public void Main()
+    static public void Main ()
     {
-      datakeluarga ok = new datakeluarga();
-      datakeluarga kakaku = new Kakak();
-      kakaku.Nama = "Achmad syauqi firman s";
-      kakaku.Umur = 21;
-      kakaku.Nohp = +6281334934887;
-      Console.WriteLine("Data Kakak:");
-      Console.WriteLine(kakaku.Nama);
-      Console.WriteLine(kakaku.Umur);
-      Console.WriteLine(kakaku.Nohp);
-      kakaku.Hobi();
-      datakeluarga ibuku = new Ibu();
-      ibuku.Nama = "Anissa yuliati ningsih";
-      ibuku.Umur = 45;
-      ibuku.Nohp = +6282336669972;
-      Console.WriteLine("Data Ibu:");
-      Console.WriteLine(ibuku.Nama);
-      Console.WriteLine(ibuku.Umur);
-      Console.WriteLine(ibuku.Nohp);
-      ibuku.Hobi();
-      Console.WriteLine("Dataku:");
-      datakeluarga aku = new Anak();
-      aku.Nama = "Hafizh arrasyiid s";
-      aku.Umur = 16;
-      aku.Nohp = +6282230132607;
-      Console.WriteLine(aku.Nama);
-      Console.WriteLine(aku.Umur);
-      Console.WriteLine(aku.Nohp);
-      aku.Hobi();      
+     familyhobi ak = new familyhobi();
+     familyhobi kakak = new Kakak();
+     familyhobi ibu = new Ibu();
+     familyhobi anak = new Anak();
+     
+     familydata kakakku = new familydata("Achmad Syauqi Firman S",21,6281334934887);
+    familydata ibuku = new familydata("Anissa Yuliati Ningsih",45,6282336669972);
+    familydata aku = new familydata("Hafizh Arrayiid S",16,6282230132607);
+     Console.WriteLine("DATA KAKAK:\n"+kakakku.nama+"\n"+kakakku.umur+"\n"+kakakku.nohp);
+     kakak.Hobi();
+   Console.WriteLine("DATA IBU:\n"+ibuku.nama+"\n"+ibuku.umur+"\n"+ibuku.nohp);
+     ibu.Hobi();
+     Console.WriteLine("DATA ANAK:\n"+aku.nama+"\n"+aku.umur+"\n"+aku.nohp);
+     anak.Hobi();
     }
-    class datakeluarga 
+    class familydata
     {
-        private string nama;
-        public string Nama
+        public string nama;
+        public int umur;
+        public long nohp;
+        public familydata(string Nama,int Umur,long Nohp)
         {
-            get { return nama;}
-            set { nama = value;}
+            nama = Nama;
+            umur = Umur;
+            nohp = Nohp;
         }
-        private int umur;
-        public int Umur
-        {
-            get {return umur;}
-            set {umur = value;}
-        }
-        private long nohp;
-        public long Nohp
-        {
-            get {return nohp;}
-            set {nohp = value;}
-        }
+    }
+    class familyhobi 
+    {
         public virtual void Hobi()
         {
             Console.WriteLine("Hobi");
         }
     }
-    class Kakak:datakeluarga
+    class Kakak:familyhobi
     {
         public override void Hobi()
         {
-            Console.WriteLine("Maen hp");
+            Console.WriteLine("Bermain HP");
         }
     }
-    class Ibu:datakeluarga 
+    class Ibu:familyhobi
     {
         public override void Hobi()
         {
-            Console.WriteLine("Belanja-shoping-healing");
+            Console.WriteLine("Belanja,Shoping,Healing");
         }
     }
-    class Anak:datakeluarga 
+    class Anak:familyhobi
     {
         public override void Hobi()
         {
             Console.WriteLine("Tidur");
         }
     }
-
 }
